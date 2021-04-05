@@ -4,9 +4,9 @@ use Tereshin\MyLog;
 use Tereshin\TereshinException;
 use Tereshin\QuEquation;
 
-include "core/EquationInterface.php";
-include "core/LogAbstract.php";
-include "core/LogInterface.php";
+include "core/core/EquationInterface.php";
+include "core/core/LogAbstract.php";
+include "core/core/LogInterface.php";
 include "Tereshin/MyLog.php";
 include "Tereshin/Equation.php";
 include "Tereshin/QuEquation.php";
