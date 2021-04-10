@@ -1,21 +1,18 @@
-<?php
+﻿<?php
 
 use Tereshin\MyLog;
-use Tereshin\TereshinException;
 use Tereshin\QuEquation;
 
-include "core/core/EquationInterface.php";
-include "core/core/LogAbstract.php";
-include "core/core/LogInterface.php";
-include "Tereshin/MyLog.php";
-include "Tereshin/Equation.php";
-include "Tereshin/QuEquation.php";
-include "Tereshin/TereshinException.php";
+
+require_once __DIR__ . './vendor/autoload.php';
 
 ini_set("display_errors", 1);
 error_reporting(-1);
 
 try {
+	if(!is_dir("log")) {
+        mkdir("log", 0700);
+    }
     MyLog::log("Версия программы: " . trim(file_get_contents('version')) );
     $b = new QuEquation();
     $values = array();
@@ -33,7 +30,7 @@ try {
 
     $str = implode(", ", $x);
     MyLog::log("Корни уравнения: " . $str);
-} catch (TereshinException $e) {
+} catch (Exception $e) {
     MyLog::log($e->getMessage());
 }
 
